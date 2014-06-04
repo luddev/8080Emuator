@@ -12,7 +12,7 @@ CC = gcc
 LD = ld
 
 #Compile flags
-CFLAGS = 
+CFLAGS = -c -std=c11
 
 #Linker flags
 LDFLAGS = 
@@ -21,22 +21,21 @@ LDFLAGS =
 LFLAGS = 
 
 #Build path.
-BUILDPATH = ./build/
+BUILDPATH = build/
 
 #Output File Name
 OFILE = 8080Emuator
 
 all:link
-
+	rm *.o
 
 link:compile
-
+	${CC} *.o -o ${BUILDPATH}${OFILE}
 
 compile:
-
+	${CC} ${CFLAGS} src/*.c
 
 clean:
 	rm *.o
 
 indent:
-
