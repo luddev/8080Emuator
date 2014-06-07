@@ -40,7 +40,7 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0x03:	fprintf(stdout, "0x%02x : INX	B",pc);		opbytes=1;	break;
 		case 0x04:	fprintf(stdout, "0x%02x : INR	B",pc );	opbytes=1;	break;
 		case 0x05:	fprintf(stdout, "0x%02x : DCR	B",pc );	opbytes=1;	break;
-		case 0x06:	fprintf(stdout, "0x%02x	: MVI	B,#0x%02x",pc,code[1]);	opbytes=2;	break;
+		case 0x06:	fprintf(stdout, "0x%02x : MVI	B,#0x%02x",pc,code[1]);	opbytes=2;	break;
 		case 0x07:	fprintf(stdout, "0x%02x : RLC	",pc );		opbytes=1;	break;
 		case 0x08:	fprintf(stdout, "0x%02x : 0x%02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0x09:	fprintf(stdout, "0x%02x : DAD	B",pc );	opbytes=1;	break;
