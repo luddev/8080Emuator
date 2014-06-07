@@ -34,10 +34,10 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 
 	int opbytes = 1;
 	switch(*code)	{
-		case 0x00:	fprintf(stdout, "0x%02x : NOP",pc);	break;
+		case 0x00:	fprintf(stdout, "0x%02x : NOP	 ",pc);	opbytes=1;	break;
 		case 0x01:	fprintf(stdout, "0x%02x : LXI	B,#%02x%02x",pc, code[2],code[1]);	opbytes=3; break;
 		case 0x02:	fprintf(stdout, "0x%02x : STAX	B",pc );	opbytes=1;	break;
-		case 0x03:	fprintf(stdout, "0x%02x : INX	B",pc);		opbytes=1; break;
+		case 0x03:	fprintf(stdout, "0x%02x : INX	B",pc);		opbytes=1;	break;
 		case 0x04:	fprintf(stdout, "0x%02x : INR	B",pc );	opbytes=1;	break;
 		case 0x05:	fprintf(stdout, "0x%02x : DCR	B",pc );	opbytes=1;	break;
 		case 0x06:	fprintf(stdout, "0x%02x	: MVI	B,#%02x",pc,code[1]);	opbytes=2;	break;
