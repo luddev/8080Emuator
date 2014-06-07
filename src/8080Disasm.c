@@ -23,6 +23,7 @@
 	\author	ludkiller
 	\date	03/06/2014
 	\TODO : Fix Invalid Op Code Handling, formatting, Output.
+			Add HTML Code Emitting Feature. ;) current Disassembly output looks ugly ;(
 */
 
 #include "8080Disasm.h"
