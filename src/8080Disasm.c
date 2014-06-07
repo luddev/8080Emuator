@@ -22,7 +22,7 @@
 /*	\file 8080Disasm.c
 	\author	ludkiller
 	\date	03/06/2014
-	\TODO : Fix all Instructions taking 3 bytes.
+	\TODO : Fix Invalid Op Code Handling, formatting, Output.
 */
 
 #include "8080Disasm.h"
