@@ -42,7 +42,7 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0x05:	fprintf(stdout, "0x%02x : DCR	B",pc );	opbytes=1;	break;
 		case 0x06:	fprintf(stdout, "0x%02x	: MVI	B,#%02x",pc,code[1]);	opbytes=2;	break;
 		case 0x07:	fprintf(stdout, "0x%02x : RLC	",pc );		opbytes=1;	break;
-		case 0x08:	/*! Not Used. */	break;
+		case 0x08:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0x09:	fprintf(stdout, "0x%02x : DAD	B",pc );	opbytes=1;	break;
 		case 0x0A:	fprintf(stdout, "0x%02x : LDAX	B",pc );	opbytes=1;	break;
 		case 0x0B:	fprintf(stdout, "0x%02x : DCX	B",pc );	opbytes=1;	break;
@@ -50,7 +50,7 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0x0D:	fprintf(stdout, "0x%02x : DCR	C",pc );	opbytes=1;	break;
 		case 0x0E:	fprintf(stdout, "0x%02x : MVI	C,%02x",pc,code[1] );	opbytes=2;	break;
 		case 0x0F:	fprintf(stdout, "0x%02x : RRC	", pc);		opbytes=1;	break;
-		case 0x10:	/*! Not Used. */	break;
+		case 0x10:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0x11:	fprintf(stdout, "0x%02x : LXI	D,#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
 		case 0x12:	fprintf(stdout, "0x%02x : STAX	D",pc );	opbytes=1;	break;
 		case 0x13:	fprintf(stdout, "0x%02x : INX	D",pc );	opbytes=1;	break;
@@ -58,7 +58,7 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0x15:	fprintf(stdout, "0x%02x : DCR	D",pc );	opbytes-1;	break;
 		case 0x16:	fprintf(stdout, "0x%02x : MVI	D,#%02x",pc,code[1] );	opbytes=2;	break;
 		case 0x17:	fprintf(stdout, "0x%02x : RAL	",pc );		opbytes=1;	break;
-		case 0x18:	/*! Not Used. */	break;
+		case 0x18:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0x19:	fprintf(stdout, "0x%02x : DAD	D",pc );	opbytes=1;	break;
 		case 0x1A:	fprintf(stdout, "0x%02x : LDAX	D",pc );	opbytes=1;	break;
 		case 0x1B:	fprintf(stdout, "0x%02x : DCX	D",pc );	opbytes=1;	break;
@@ -74,7 +74,7 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0x25:	fprintf(stdout, "0x%02x : DCR	H",pc );	opbytes=1;	break;
 		case 0x26:	fprintf(stdout, "0x%02x : MVI	H,#%02x",pc,code[1] );	opbytes=2;	break;
 		case 0x27:	fprintf(stdout, "0x%02x : DAA	",pc );		opbytes=1;	break;
-		case 0x28:	/*! Not Used. */	break;
+		case 0x28:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0x29:	fprintf(stdout, "0x%02x : DAD	H",pc );	opbytes=1;	break;
 		case 0x2A:	fprintf(stdout, "0x%02x : LHLD	#%02x%02x",pc,code[1],code[0] );	opbytes=3;break;
 		case 0x2B:	fprintf(stdout, "0x%02x : DCX	H",pc );	opbytes=1;	break;
@@ -90,7 +90,7 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0x35:	fprintf(stdout, "0x%02x : DCR	M",pc );	opbytes=1;	break;
 		case 0x36:	fprintf(stdout, "0x%02x : MVI	M,#%02x",pc,code[1] );	opbytes=2;	break;
 		case 0x37:	fprintf(stdout, "0x%02x : STC 	",pc );		opbytes=1;	break;
-		case 0x38:	/*!	Not Used. */	break;
+		case 0x38:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0x39:	fprintf(stdout, "0x%02x : DAD	SP",pc );	opbytes=1;	break;
 		case 0x3A:	fprintf(stdout, "0x%02x : LDA 	%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
 		case 0x3B:	fprintf(stdout, "0x%02x : DCX	SP",pc );	opbytes=1;	break;
@@ -237,7 +237,7 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0xC8:	fprintf(stdout, "0x%02x : R 	",pc );	opbytes=1;	break;
 		case 0xC9:	fprintf(stdout, "0x%02x : RET 	",pc );	opbytes=1;	break;
 		case 0xCA:	fprintf(stdout, "0x%02x : JZ 	#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
-		case 0xCB:	/*!	Unused Opcode. */	break;
+		case 0xCB:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0xCC:	fprintf(stdout, "0x%02x : CZ 	#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
 		case 0xCD:	fprintf(stdout, "0x%02x : CALL 	#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
 		case 0xCE:	fprintf(stdout, "0x%02x : ACI 	#%02x",pc,code[1] );	opbytes=2;	break;
@@ -251,11 +251,11 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0xD6:	fprintf(stdout, "0x%02x : SUI 	%02x",pc,code[1] );	opbytes=2;	break;
 		case 0xD7:	fprintf(stdout, "0x%02x : RST 	2",pc );	opbytes=1;	break;
 		case 0xD8:	fprintf(stdout, "0x%02x : RC 	 ",pc );	opbytes=1;	break;
-		case 0xD9:	/*! Unused Opcode. */	break;
+		case 0xD9:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0xDA:	fprintf(stdout, "0x%02x : JC 	#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
 		case 0xDB:	fprintf(stdout, "0x%02x : IN 	#%02x",pc,code[1] );	opbytes=2;	break;
 		case 0xDC:	fprintf(stdout, "0x%02x : CC 	#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
-		case 0xDD:	/*!	Unused Opcode */	break;
+		case 0xDD:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0xDE:	fprintf(stdout, "0x%02x : SBI 	#%02x",pc,code[1] );	opbytes=2;	break;
 		case 0xDF:	fprintf(stdout, "0x%02x : RST 	3",pc );	opbytes=1;	break;
 		case 0xE0:	fprintf(stdout, "0x%02x : RPO	 ",pc );	opbytes=1;	break;
@@ -271,7 +271,7 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0xEA:	fprintf(stdout, "0x%02x : JPE 	#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
 		case 0xEB:	fprintf(stdout, "0x%02x : XCHG	 ",pc );	opbytes=1;	break;
 		case 0xEC:	fprintf(stdout, "0x%02x : CPE 	#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
-		case 0xED:	/*! Unused Opcode. */	break;
+		case 0xED:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0xEE:	fprintf(stdout, "0x%02x : XRI 	#%02x",pc,code[1] );	opbytes=2;	break;
 		case 0xEF:	fprintf(stdout, "0x%02x : RST 	5",pc );	opbytes=1;	break;
 		case 0xF0:	fprintf(stdout, "0x%02x : RP 	 ",pc );	opbytes=1;	break;
@@ -287,7 +287,7 @@ int DisassembleOp_8080(unsigned char *rom, int pc)
 		case 0xFA:	fprintf(stdout, "0x%02x : JM 	#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
 		case 0xFB:	fprintf(stdout, "0x%02x : EI 	 ",pc );	opbytes=1;	break;
 		case 0xFC:	fprintf(stdout, "0x%02x : CM 	#%02x%02x",pc,code[2],code[1] );	opbytes=3;	break;
-		case 0xFD:	/*!	Unused Opcode. */	break;
+		case 0xFD:	fprintf(stdout, "0x%02x : %02x 	Invalid OpCode.",pc,code[0] ); opbytes=1;	break;
 		case 0xFE:	fprintf(stdout, "0x%02x : CPI 	#%02x",pc,code[1] );	opbytes=2;	break;
 		case 0xFF:	fprintf(stdout, "0x%02x : RST 	7",pc );	opbytes=1;	break;
 
